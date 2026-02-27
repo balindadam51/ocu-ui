@@ -1,3 +1,9 @@
+"use client";
+
+import {useEffect, useMemo, useState} from "react";
+import {usePathname, useRouter} from "next/navigation";
+import {clearSession, getSession} from "@/lib/myoucSession";
+
 const quickLinks = [
     {label: "CAREERS", href: "https://www.ouc.com/about/careers"},
     {label: "BUSINESS", href: "https://www.ouc.com/solutions-programs/business/"},
@@ -29,6 +35,35 @@ function Chevron() {
 }
 
 export function HeaderOUC() {
+    const router = useRouter();
+    const pathname = usePathname();
+
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+    // keep it reactive (when you navigate, refresh logged-in state)
+    useEffect(() => {
+        setIsLoggedIn(!!getSession());
+    }, [pathname]);
+
+    const loginTarget = useMemo(() => {
+        // home page section id to scroll to
+        // you will add id="myouc-login" on the LoginSplit section (next step below)
+        return "/#myouc-login";
+    }, []);
+
+    const onLoginClick = (e: React.MouseEvent) => {
+        e.preventDefault();
+        // Always go to home and scroll to login
+        router.push(loginTarget);
+    };
+
+    const onLogoutClick = (e: React.MouseEvent) => {
+        e.preventDefault();
+        clearSession();
+        setIsLoggedIn(false);
+        router.push("/"); // go home after logout
+    };
+
     return (
         <header className="bg-white">
             {/* FIRST ROW */}
@@ -61,7 +96,7 @@ export function HeaderOUC() {
                             </div>
                         </nav>
 
-                        {/* Language toggle + logout */}
+                        {/* Language toggle + login/logout */}
                         <div className="flex items-center gap-10">
                             <div className="hidden lg:flex items-center gap-4">
                                 <span className="text-[18px] text-[var(--ouc-primary)]">English</span>
@@ -74,12 +109,23 @@ export function HeaderOUC() {
                                 <span className="text-[18px] text-[var(--ouc-primary)]">Español</span>
                             </div>
 
-                            <a
-                                href="#"
-                                className="inline-flex items-center whitespace-nowrap rounded-full bg-[var(--ouc-green)] px-12 py-3 text-[18px] font-[850] text-white hover:brightness-95"
-                            >
-                                LOG IN <span className="ml-3">→</span>
-                            </a>
+                            {isLoggedIn ? (
+                                <a
+                                    href="#"
+                                    onClick={onLogoutClick}
+                                    className="inline-flex items-center whitespace-nowrap rounded-full bg-[var(--ouc-green)] px-12 py-3 text-[18px] font-[850] text-white hover:brightness-95"
+                                >
+                                    LOG OUT <span className="ml-3">→</span>
+                                </a>
+                            ) : (
+                                <a
+                                    href={loginTarget}
+                                    onClick={onLoginClick}
+                                    className="inline-flex items-center whitespace-nowrap rounded-full bg-[var(--ouc-green)] px-12 py-3 text-[18px] font-[850] text-white hover:brightness-95"
+                                >
+                                    LOG IN <span className="ml-3">→</span>
+                                </a>
+                            )}
                         </div>
                     </div>
                 </div>
@@ -89,9 +135,7 @@ export function HeaderOUC() {
             <div className="container-max">
                 <div
                     className="mx-auto my-6 max-w-[1240px] rounded-full bg-white px-10 py-4 shadow-[0_12px_30px_rgba(0,0,0,0.12)] ring-1 ring-black/5">
-                    {/* IMPORTANT: keep search INSIDE pill by making one flex row and allowing nav to shrink */}
                     <div className="flex items-center overflow-hidden">
-                        {/* Nav that can shrink */}
                         <nav className="min-w-0 flex-1">
                             <ul className="flex items-center justify-center gap-14">
                                 {mainLinks.map((l) => (
@@ -108,7 +152,6 @@ export function HeaderOUC() {
                             </ul>
                         </nav>
 
-                        {/* Search pinned INSIDE pill */}
                         <button
                             aria-label="Site search"
                             className="ml-8 shrink-0 grid h-11 w-11 place-items-center rounded-full bg-[var(--ouc-green)] text-white shadow-[var(--ouc-shadow)] hover:brightness-95"
@@ -121,14 +164,7 @@ export function HeaderOUC() {
                                     strokeWidth="2"
                                     strokeLinecap="round"
                                 />
-                                <circle
-                                    cx="11"
-                                    cy="11"
-                                    r="7"
-                                    fill="none"
-                                    stroke="white"
-                                    strokeWidth="2"
-                                />
+                                <circle cx="11" cy="11" r="7" fill="none" stroke="white" strokeWidth="2"/>
                             </svg>
                         </button>
                     </div>

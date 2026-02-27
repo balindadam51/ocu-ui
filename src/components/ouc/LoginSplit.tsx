@@ -150,7 +150,7 @@ export function LoginSplit() {
     };
 
     return (
-        <section className="w-full">
+        <section id="myouc-login" className="w-full">
             <div className="grid grid-cols-1 lg:grid-cols-2">
                 {/* LEFT PANEL */}
                 <div className="bg-[var(--ouc-light)]">
