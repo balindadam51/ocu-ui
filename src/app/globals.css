@@ -1,15 +1,16 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+:root{
+  --ouc-text-blue: #0b5f97;
+  --ouc-primary:#007bbd;
+  --ouc-green:#50b848;
+  --ouc-dark-blue:#005496;
+  --ouc-light:#e5f3fa;
+  --ouc-shadow:0 2px 8px 0 #00000021;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -23,4 +24,48 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.container-max {
+  @apply mx-auto w-full max-w-[1180px] px-6;
+}
+
+/* makes the pill nav overlap the hero like the screenshot */
+.nav-overlap {
+  margin-bottom: -28px;
+}
+
+@font-face{
+  font-family: Avenir;
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("https://www.ouc.com/wp-content/uploads/fonts/avenir_medium_0-webfont.woff2") format("woff2");
+}
+@font-face{
+  font-family: Avenir;
+  font-style: normal;
+  font-weight: 850;
+  font-display: swap;
+  src: url("https://www.ouc.com/wp-content/uploads/fonts/avenir_heavy-webfont.woff2") format("woff2");
+}
+@font-face{
+  font-family: Avenir;
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url("https://www.ouc.com/wp-content/uploads/fonts/avenir_black_0-webfont.woff2") format("woff2");
+}
+
+:root{
+  --ouc-primary: #007bbd;     /* WP primary */
+  --ouc-green: #50b848;       /* custom-ouc-green */
+  --ouc-dark-blue: #005496;   /* custom-ouc-dark-blue */
+  --ouc-yellow: #ffcb04;      /* custom-ouc-yellow */
+  --ouc-light: #e5f3fa;       /* used everywhere */
+  --ouc-shadow: 0 2px 8px 0 #00000021;
+}
+
+body{
+  font-family: Avenir, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
 }

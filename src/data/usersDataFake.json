@@ -1,0 +1,39 @@
+{
+  "mihaienescu": {
+    "customerName": "Enescu, Mihai",
+    "addressLines": [
+      "1545 NW 7TH AVE",
+      "MIAMI, FL 33136",
+      "UNITED STATES"
+    ],
+    "email": "mihaienescu@example.com",
+    "phoneNumbers": {
+      "primary": "(786) 531-9343",
+      "secondary": ""
+    }
+  },
+  "bona1971": {
+    "customerName": "Bona, Florica",
+    "addressLines": [
+      "427 N SUMMERLIN AVE",
+      "ORLANDO, FL 32803",
+      "UNITED STATES"
+    ],
+    "email": "bonaflorica1971@gmail.com",
+    "phoneNumbers": {
+      "primary": "(407) 808-9054"
+    }
+  },
+  "taridacristian": {
+    "customerName": "Tarida, Cristian",
+    "addressLines": [
+      "427 N SUMMERLIN AVE",
+      "ORLANDO, FL 32803",
+      "UNITED STATES"
+    ],
+    "email": "cristiantarida1979@gmail.com",
+    "phoneNumbers": {
+      "primary": "(786) 896-9600"
+    }
+  }
+}

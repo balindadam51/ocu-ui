@@ -1,0 +1,343 @@
+.wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 18px 18px 42px;
+    box-sizing: border-box;
+}
+
+.topBar {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 16px;
+    margin: 10px 0 16px;
+}
+
+.pageTitle {
+    font-size: 56px; /* closer to original */
+    line-height: 1;
+    font-weight: 400;
+    margin: 0;
+    color: #0a5a9b;
+}
+
+.accountNumber {
+    font-size: 18px;
+    color: #111;
+    white-space: nowrap;
+}
+.accountLabel {
+    font-weight: 700;
+}
+.accountValue {
+    font-weight: 400;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 300px 1fr 460px;
+    gap: 22px;
+    align-items: start;
+}
+
+/* Sidebar */
+.sidebar {
+    border-right: 1px solid #e6ebf2;
+    padding-right: 14px;
+}
+
+.sideNav {
+    display: flex;
+    flex-direction: column;
+}
+
+.sideLink {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 18px;
+    color: #555;
+    text-decoration: none;
+    border-bottom: 1px solid #f0f2f6;
+    font-size: 20px;
+    line-height: 1.2;
+}
+
+.sideIcon {
+    width: 20px;
+    height: 20px;
+    flex: 0 0 auto;
+    opacity: 0.65;
+}
+
+.sideActive {
+    color: #f08b1a;
+    position: relative;
+}
+
+.sideActive::after {
+    content: "";
+    position: absolute;
+    right: -14px;
+    top: 0;
+    width: 3px;
+    height: 100%;
+    background: #f08b1a;
+}
+
+/* Cards — no cracks */
+.card {
+    background: #fff;
+    border: 1px solid #cfd6df;
+    border-radius: 4px;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.cardHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 16px;
+    border-bottom: 1px solid #e6ebf2;
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.cardHeaderLeft {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+}
+
+.dateText {
+    font-weight: 400;
+    color: #333;
+}
+
+.cardBody {
+    padding: 16px;
+    box-sizing: border-box;
+}
+
+.hr {
+    height: 1px;
+    border: 0;
+    background: #e6ebf2;
+    margin: 16px 0;
+}
+
+.statusActive {
+    color: #2f9a34;
+    font-weight: 800;
+}
+
+.rowBetween {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    align-items: center;
+}
+
+.mutedLabel {
+    color: #333;
+    font-size: 18px;
+}
+
+.balanceRight {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.balanceAmount {
+    font-size: 22px;
+}
+
+.btnGreen {
+    background: #2f8f3b;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 800;
+    border-radius: 999px;
+    padding: 12px 18px; /* SMALLER */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 180px; /* SMALLER */
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+    font-size: 15px; /* SMALLER */
+}
+
+.btnBlue {
+    background: #0b63a8;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 800;
+    border-radius: 999px;
+    padding: 12px 18px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 210px;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+    font-size: 15px;
+}
+
+.btnBlueSmall {
+    background: #0b63a8;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 800;
+    border-radius: 999px;
+    padding: 12px 18px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 230px;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+    font-size: 15px;
+}
+
+.twoCol {
+    display: grid;
+    grid-template-columns: 1fr 240px;
+    gap: 18px;
+    align-items: center;
+}
+
+.powerPassLeft {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    gap: 14px;
+    align-items: center;
+}
+
+.powerPassLogo {
+    width: 140px;
+    height: 80px;
+    background: #e6e6e6;
+    border-radius: 3px;
+}
+
+.bodyText {
+    margin: 0;
+    color: #222;
+    font-size: 16px;
+    line-height: 1.45;
+}
+
+.powerPassRight {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.rightOnlyRow {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.lastPayments {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+}
+
+.lastPayItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 14px;
+}
+
+.lastPayLabel {
+    color: #111;
+    font-size: 16px;
+}
+
+.lastPayValue {
+    font-weight: 700;
+    color: #111;
+}
+
+.editLink {
+    color: #1a64c8;
+    font-weight: 500;
+    text-decoration: underline;
+    font-size: 16px;
+}
+
+.infoBlock {
+    margin-bottom: 16px;
+}
+
+.infoTitle {
+    font-weight: 700;
+    margin-bottom: 6px;
+    font-size: 16px;
+}
+
+.infoValue {
+    color: #111;
+    line-height: 1.35;
+    font-size: 16px;
+}
+
+.updateLink {
+    display: inline-block;
+    margin-top: 6px;
+    color: #1a64c8;
+    text-decoration: underline;
+    font-size: 16px;
+}
+
+.smallCaps {
+    font-variant: small-caps;
+    letter-spacing: 0.5px;
+}
+
+.simpleLinkRow {
+    display: block;
+    padding: 12px 14px;
+    border: 1px solid #e6ebf2;
+    border-radius: 4px;
+    text-decoration: none;
+    color: #111;
+    background: #fff;
+    font-size: 16px;
+}
+
+/* Column wrappers */
+.mainCol,
+.rightCol {
+    min-width: 0;
+}
+
+/* Responsive */
+@media (max-width: 1180px) {
+    .grid {
+        grid-template-columns: 280px 1fr;
+    }
+    .rightCol {
+        grid-column: 2 / 3;
+    }
+}
+
+@media (max-width: 860px) {
+    .topBar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .grid {
+        grid-template-columns: 1fr;
+    }
+    .sidebar {
+        border-right: none;
+        padding-right: 0;
+        border-bottom: 1px solid #e6ebf2;
+        padding-bottom: 12px;
+    }
+}

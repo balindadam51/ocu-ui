@@ -1,0 +1,543 @@
+/* Everything scoped under /myouc only */
+.myouc-scope {
+    font-family: Avenir, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    color: #1f2937;
+    background: #fff;
+}
+
+/* Keep header/footer from stretching weird */
+.myouc-main {
+    min-height: 60vh;
+}
+
+/* Container that matches classic fixed-width feel */
+.myouc-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 24px 20px;
+}
+
+/* Two-column layout: sidebar + content */
+.myouc-grid {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 24px;
+}
+
+@media (max-width: 980px) {
+    .myouc-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Sidebar */
+.myouc-sidebar {
+    border-radius: 10px;
+    background: #f7f7f7;
+    border: 1px solid #e5e7eb;
+    overflow: hidden;
+}
+
+.myouc-sidebar .nav {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.myouc-sidebar .nav > li {
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.myouc-sidebar .nav a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 14px;
+    color: #0f172a;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.myouc-sidebar .nav a:hover {
+    background: #eef2f7;
+}
+
+.myouc-sidebar .nav li.active > a {
+    background: #e5f3fa;
+    color: #005496;
+}
+
+.myouc-sidebar .sub-nav {
+    list-style: none;
+    padding: 0 0 10px 0;
+    margin: 0;
+    display: none;
+}
+
+.myouc-sidebar li.expanded > .sub-nav {
+    display: block;
+}
+
+.myouc-sidebar .sub-nav a {
+    padding: 10px 14px 10px 34px;
+    font-weight: 500;
+}
+
+/* Content heading row */
+.myouc-heading {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.myouc-heading h1,
+.myouc-heading h2 {
+    margin: 0;
+    color: #005496;
+    font-weight: 700;
+}
+
+.myouc-account-select {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #334155;
+    font-weight: 600;
+}
+
+.myouc-account-select em {
+    font-style: normal;
+    color: #64748b;
+    font-weight: 600;
+}
+
+.myouc-account-select .single-account {
+    font-weight: 800;
+    color: #0f172a;
+}
+
+/* “Module” cards (the boxes that looked cracked) */
+.myouc-modules {
+    display: grid;
+    grid-template-columns: 1fr 360px;
+    gap: 24px;
+    align-items: start;
+}
+
+@media (max-width: 1100px) {
+    .myouc-modules {
+        grid-template-columns: 1fr;
+    }
+}
+
+.myouc-module {
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    background: #fff;
+    overflow: hidden;
+}
+
+.myouc-module .titlebar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 16px;
+    border-bottom: 1px solid #e5e7eb;
+    background: #f8fafc;
+}
+
+.myouc-module .titlebar strong {
+    font-size: 14px;
+    letter-spacing: 0.2px;
+    text-transform: uppercase;
+    color: #0f172a;
+}
+
+.myouc-module .body {
+    padding: 16px;
+}
+
+.myouc-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.myouc-row + .myouc-row {
+    border-top: 1px solid #eef2f7;
+}
+
+/* Buttons */
+.myouc-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    padding: 12px 14px;
+    text-decoration: none;
+    font-weight: 800;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+    border: 1px solid transparent;
+    cursor: pointer;
+    line-height: 1;
+    font-size: 13px;
+}
+
+.myouc-btn-green {
+    background: #348734;
+    color: #fff;
+}
+
+.myouc-btn-green:hover {
+    filter: brightness(0.95);
+}
+
+.myouc-btn-blue {
+    background: #0071ad;
+    color: #fff;
+}
+
+.myouc-btn-blue:hover {
+    filter: brightness(0.95);
+}
+
+.myouc-btn-gray {
+    background: #f1f5f9;
+    border-color: #e5e7eb;
+    color: #0f172a;
+}
+
+.myouc-btn-gray:hover {
+    background: #e2e8f0;
+}
+
+/* Small helper links */
+.myouc-helper-link {
+    color: #0071ad;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 13px;
+}
+
+.myouc-helper-link:hover {
+    text-decoration: underline;
+}
+
+/* “My Info” right column formatting */
+.myouc-info-block p {
+    margin: 0 0 12px 0;
+    color: #0f172a;
+}
+
+.myouc-info-block strong {
+    display: inline-block;
+    margin-bottom: 4px;
+}
+
+.myouc-muted {
+    color: #64748b;
+}
+
+/* Simple icon bubble (works great with any icon library later) */
+.myouc-ico {
+    width: 28px;
+    height: 28px;
+    border-radius: 8px;
+    background: #e5f3fa;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #005496;
+    flex: 0 0 auto;
+}
+
+/* =========================
+   MY INFO PAGE (forms/tabs)
+   ========================= */
+
+.myouc-tabs {
+    display: flex;
+    gap: 0;
+    margin: 16px 0 14px;
+}
+
+.myouc-tab {
+    appearance: none;
+    border: 1px solid #cfd6dc;
+    background: #fff;
+    padding: 10px 16px;
+    font-size: 14px;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: #0b5fa5;
+    cursor: pointer;
+    border-bottom: none;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+}
+
+.myouc-tab + .myouc-tab {
+    margin-left: 6px;
+}
+
+.myouc-tab.active {
+    background: #e6f3fb;
+    color: #0b5fa5;
+    border-color: #cfd6dc;
+    box-shadow: inset 0 -2px 0 #e6f3fb;
+}
+
+.myouc-tab-panel {
+    border: 1px solid #cfd6dc;
+    border-radius: 6px;
+    padding: 18px 18px 22px;
+    background: #fff;
+}
+
+/* notices */
+.myouc-notice {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-radius: 3px;
+    padding: 12px 12px;
+    margin: 6px 0 14px;
+    border: 1px solid transparent;
+}
+
+.myouc-notice-ico {
+    display: inline-flex;
+    width: 18px;
+    justify-content: center;
+}
+
+.myouc-notice-text {
+    font-size: 14px;
+    color: #1f2937;
+}
+
+.myouc-notice-warn {
+    background: #fff3cd;
+    border-color: #ffe69c;
+}
+
+.myouc-notice-info {
+    background: #e6f3fb;
+    border-color: #b9dff3;
+}
+
+/* helper text */
+.myouc-help {
+    margin: 0 0 10px;
+    font-size: 14px;
+    color: #111827;
+}
+
+.myouc-muted-block {
+    margin: 10px 0 14px;
+    color: #374151;
+    font-size: 13px;
+    line-height: 1.35;
+}
+
+.myouc-section {
+    margin-top: 18px;
+}
+
+.myouc-section-title {
+    font-size: 14px;
+    font-weight: 800;
+    color: #0b5fa5;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+}
+
+.myouc-hr {
+    height: 1px;
+    background: #cfd6dc;
+    margin: 8px 0 14px;
+}
+
+/* form grid like original */
+.myouc-form-grid {
+    display: grid;
+    grid-template-columns: 240px minmax(320px, 460px);
+    gap: 14px 18px;
+    align-items: center;
+}
+
+.myouc-label {
+    font-size: 14px;
+    color: #111827;
+}
+
+.myouc-required {
+    color: #dc2626;
+    font-weight: 800;
+    margin-left: 6px;
+}
+
+/* inputs/selects */
+.myouc-input,
+.myouc-select {
+    width: 100%;
+    border: 1px solid #c7c7c7;
+    border-radius: 4px;
+    height: 34px;
+    padding: 6px 10px;
+    font-size: 14px;
+    outline: none;
+    background: #fff;
+}
+
+.myouc-input:focus,
+.myouc-select:focus {
+    border-color: #2c7dbf;
+    box-shadow: 0 0 0 3px rgba(44, 125, 191, 0.15);
+}
+
+.myouc-select {
+    padding-right: 32px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24'%3E%3Cpath d='M7 10l5 5 5-5' fill='none' stroke='%23348734' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+}
+
+.myouc-input-sm {
+    max-width: 180px;
+}
+.myouc-input-xs {
+    width: 56px;
+    text-align: center;
+}
+
+.myouc-hint {
+    margin-top: 6px;
+    font-size: 12px;
+    color: #6b7280;
+}
+
+/* phone row */
+.myouc-phone-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 8px;
+}
+
+.myouc-label-inline {
+    min-width: 240px;
+    font-size: 14px;
+    color: #111827;
+}
+
+.myouc-phone-inputs {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.myouc-phone-sep {
+    color: #111827;
+    font-size: 14px;
+}
+
+.myouc-phone-ext {
+    margin-left: 8px;
+    font-size: 14px;
+    color: #111827;
+}
+
+.myouc-trash {
+    margin-left: 8px;
+    height: 34px;
+    width: 38px;
+    border-radius: 4px;
+    border: 1px solid transparent;
+    background: transparent;
+    cursor: pointer;
+    font-size: 18px;
+    line-height: 1;
+}
+
+.myouc-trash:hover {
+    background: #f3f4f6;
+    border-color: #d1d5db;
+}
+
+/* radio row */
+.myouc-radio-row {
+    margin-top: 8px;
+    padding-left: 240px; /* align under inputs */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+.myouc-radio {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    color: #111827;
+}
+
+.myouc-radio input {
+    accent-color: #0b5fa5;
+}
+
+/* buttons row */
+.myouc-actions-row {
+    margin-top: 18px;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding-left: 240px; /* align under inputs */
+}
+
+.myouc-btn-wide {
+    min-width: 260px;
+}
+
+.myouc-btn.myouc-btn-blue.myouc-btn-wide {
+    border-radius: 999px;
+    padding: 12px 26px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+}
+
+.myouc-link {
+    color: #0b5fa5;
+    text-decoration: underline;
+    font-size: 14px;
+}
+
+.myouc-link-danger {
+    color: #b91c1c;
+    text-decoration: underline;
+    font-size: 14px;
+}
+
+/* responsive */
+@media (max-width: 980px) {
+    .myouc-form-grid {
+        grid-template-columns: 1fr;
+    }
+    .myouc-label-inline {
+        min-width: 0;
+    }
+    .myouc-radio-row,
+    .myouc-actions-row {
+        padding-left: 0;
+    }
+    .myouc-phone-row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
